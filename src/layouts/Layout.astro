@@ -1,0 +1,22 @@
+---
+import '../styles/global.css';
+
+const { title = 'Rood Wit Zaanstad' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="nl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta
+            name="description"
+            content="Rood Wit Zaanstad - Voetbalvereniging in Zaandam"
+        />
+        <title>{title}</title>
+    </head>
+
+    <body>
+        <slot />
+    </body>
+</html>
