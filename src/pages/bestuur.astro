@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const bestuur = [
+    {
+        naam: 'Metin Aksoy',
+        functie: 'Voorzitter',
+    },
+    {
+        naam: 'Mehmet Ülkü',
+        functie: 'Secretariaat, financiën',
+    },
+    {
+        naam: 'Eddy Walstra',
+        functie: 'Secretariaat(2)',
+    },
+    {
+        naam: 'Olivia Wijdebosch',
+        functie: 'Voetbalzaken Jeugd',
+    },
+    {
+        naam: 'Hatice Teymen',
+        functie: 'Algemene Zaken – Leden administratie',
+    },
+    {
+        naam: 'Ramazan Pektas',
+        functie: 'Leden administratie',
+    },
+    {
+        naam: 'Sefa Yildirim',
+        functie: 'Technische Zaken & Ondersteuning',
+    },
+    {
+        naam: 'Dindar Topcu',
+        functie: 'Beheerder accommodatie',
+    },
+    {
+        naam: 'Daylan Yildirim',
+        functie: 'Sponsorzaken',
+    },
+];
+---
+
+<Layout title="Bestuur | Rood Wit Zaanstad">
+    <main class="bg-gray-50">
+        <section class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+
+            <!-- Pagina titel -->
+            <div class="mb-10">
+                <p class="mb-2 text-sm font-semibold uppercase tracking-wider text-red-600">
+                    Rood Wit Zaanstad
+                </p>
+
+                <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+                    Bestuur
+                </h1>
+
+                <div class="mt-4 h-1 w-16 bg-red-600"></div>
+            </div>
+
+            <!-- Bestuursleden -->
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {
+                    bestuur.map((persoon) => (
+                            <article
+                                    class="rounded-xl bg-white p-6 shadow-sm ring-1 ring-gray-200 transition-shadow hover:shadow-md"
+                            >
+                                <h2 class="text-xl font-bold text-gray-900">
+                                    {persoon.naam}
+                                </h2>
+
+                                <p class="mt-2 text-sm font-medium text-red-600">
+                                    {persoon.functie}
+                                </p>
+                            </article>
+                    ))
+                }
+            </div>
+        </section>
+    </main>
+</Layout>

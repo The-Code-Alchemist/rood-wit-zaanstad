@@ -1,0 +1,92 @@
+<aside class="space-y-6">
+
+    <!-- Zoeken -->
+    <section class="bg-white p-5 shadow-sm">
+        <h2 class="mb-4 text-lg font-bold text-gray-900">
+            Zoeken
+        </h2>
+
+        <form action="/zoeken" method="get" class="flex">
+            <label for="sidebar-search" class="sr-only">
+                Zoeken
+            </label>
+
+            <input
+                    id="sidebar-search"
+                    type="search"
+                    name="q"
+                    placeholder="Zoeken"
+                    class="min-w-0 flex-1 border border-gray-300 px-3 py-2 text-sm text-gray-900 outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600"
+            />
+
+            <button
+                    type="submit"
+                    aria-label="Zoeken"
+                    class="flex w-12 items-center justify-center bg-red-700 text-white transition-colors hover:bg-red-800"
+            >
+                <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        class="h-5 w-5"
+                        aria-hidden="true"
+                >
+                    <circle cx="11" cy="11" r="7" />
+                    <path d="m20 20-4-4" />
+                </svg>
+            </button>
+        </form>
+    </section>
+
+    <!-- Categorieën -->
+    <section class="bg-white p-5 shadow-sm">
+        <h2 class="mb-2 inline-block bg-red-700 px-3 py-2 text-sm font-bold text-white">
+            Categorieën
+        </h2>
+
+        <nav aria-label="Categorieën">
+            <ul class="mt-1 divide-y divide-gray-200">
+
+                <li>
+                    <a
+                            href="/nieuws"
+                            class="block py-3 text-sm text-gray-900 transition-colors hover:text-red-700"
+                    >
+                        Nieuws
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                            href="/senioren"
+                            class="block py-3 text-sm text-gray-900 transition-colors hover:text-red-700"
+                    >
+                        Senioren
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                            href="/sponsoren"
+                            class="block py-3 text-sm text-gray-900 transition-colors hover:text-red-700"
+                    >
+                        Sponsoren
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                            href="/znstd"
+                            class="block py-3 text-sm text-gray-900 transition-colors hover:text-red-700"
+                    >
+                        ZNSTD
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+    </section>
+
+</aside>

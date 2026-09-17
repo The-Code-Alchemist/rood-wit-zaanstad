@@ -1,0 +1,656 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact | Rood Wit Zaanstad">
+    <main class="bg-gray-100 px-4 py-6 sm:px-6">
+        <section class="mx-auto max-w-3xl bg-white p-5 shadow-sm">
+
+            <!-- Contactgegevens -->
+            <div>
+                <img
+                        src="/home/rwz-logo.png"
+                        alt="Rood-Wit Zaanstad"
+                        class="mb-5 h-auto w-40"
+                />
+
+                <h1 class="text-2xl font-bold text-gray-900">
+                    SV Rood-Wit Zaanstad
+                </h1>
+
+                <div class="mt-4 space-y-1 text-sm leading-6 text-gray-700">
+                    <p>Sportpark Poelenburg</p>
+                    <p>Poelenburg 464</p>
+
+                    <p>
+                        <span class="mr-1">1504 NW</span>
+                        <a
+                                href="https://www.hollandsevelden.nl/clubs/zaandam/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-red-600 hover:underline"
+                        >
+                            Zaandam
+                        </a>
+                    </p>
+                </div>
+
+                <p class="mt-6">
+                    <a
+                            href="https://www.bing.com/search?q=rood+wit+zaanstad"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-red-600 hover:underline"
+                    >
+                        rood wit zaanstad – Zoeken
+                    </a>
+                </p>
+
+                <div class="mt-8">
+                    <h2 class="font-bold text-gray-900">
+                        Telefoonnummer:
+                    </h2>
+
+                    <div class="mt-2 space-y-1 text-sm leading-6 text-gray-700">
+                        <p>
+                            <span class="mr-1">Algemeen:</span>
+                            <a
+                                    href="tel:+31756164992"
+                                    class="font-semibold text-gray-900 hover:text-red-600"
+                            >
+                                075-6164992
+                            </a>
+                        </p>
+
+                        <p>
+                            <span class="mr-1">
+                                Accommodatie beheerder: dhr. Dindar Topcu :
+                            </span>
+                            <a
+                                    href="tel:+31655873396"
+                                    class="font-semibold text-gray-900 hover:text-red-600"
+                            >
+                                0655873396
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-6 space-y-2 text-sm leading-6 text-gray-700">
+                    <p>
+                        <span class="mr-1">Website:</span>
+                        <a
+                                href="https://roodwitzaanstad.nl/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="text-red-600 hover:underline"
+                        >
+                            roodwitzaanstad.nl
+                        </a>
+                    </p>
+
+                    <p>
+                        KNVB-nummer: BBFZ57F
+                    </p>
+                </div>
+
+                <div class="mt-8 text-sm leading-7 text-gray-700">
+                    <p>
+                        Om met jullie snel contacten te leggen is het wel belangrijk
+                        dat een juiste contactformulier ingevuld wordt.
+                    </p>
+
+                    <p class="mt-2">
+                        Graag onderaan
+                        <strong class="mx-1">een keuze maken</strong>
+                        van de contactformulieren
+                        ‘Algemene zaken, wedstrijdsecretaris, Jeugd,
+                        ledenadministratie en damesteam”
+                    </p>
+                </div>
+            </div>
+
+            <!-- Contactformulieren -->
+            <div class="mt-10 border-t border-gray-200 pt-8">
+
+                <h2 class="text-xl font-bold text-gray-900">
+                    Contactformulier
+                </h2>
+
+                <p class="mt-2 text-sm text-gray-600">
+                    Kies hieronder waarvoor je contact wilt opnemen.
+                </p>
+
+                <!-- Tabbladen -->
+                <div
+                        class="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3"
+                        role="tablist"
+                        aria-label="Contactformulieren"
+                >
+                    <button
+                            type="button"
+                            role="tab"
+                            aria-selected="true"
+                            aria-controls="panel-algemene-zaken"
+                            data-tab="algemene-zaken"
+                            class="contact-tab rounded-lg bg-red-700 px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-800"
+                    >
+                        Algemene zaken
+                    </button>
+
+                    <button
+                            type="button"
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="panel-wedstrijdsecretaris"
+                            data-tab="wedstrijdsecretaris"
+                            class="contact-tab rounded-lg bg-gray-100 px-4 py-3 text-sm font-semibold text-gray-700 transition-colors hover:bg-gray-200"
+                    >
+                        Wedstrijdsecretaris
+                    </button>
+
+                    <button
+                            type="button"
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="panel-ledenadministratie"
+                            data-tab="ledenadministratie"
+                            class="contact-tab rounded-lg bg-gray-100 px-4 py-3 text-sm font-semibold text-gray-700 transition-colors hover:bg-gray-200"
+                    >
+                        Ledenadministratie
+                    </button>
+
+                    <button
+                            type="button"
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="panel-jeugd"
+                            data-tab="jeugd"
+                            class="contact-tab rounded-lg bg-gray-100 px-4 py-3 text-sm font-semibold text-gray-700 transition-colors hover:bg-gray-200"
+                    >
+                        Jeugd
+                    </button>
+
+                    <button
+                            type="button"
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="panel-damesteam"
+                            data-tab="damesteam"
+                            class="contact-tab rounded-lg bg-gray-100 px-4 py-3 text-sm font-semibold text-gray-700 transition-colors hover:bg-gray-200"
+                    >
+                        Damesteam
+                    </button>
+                </div>
+
+                <!-- Algemene zaken -->
+                <div
+                        id="panel-algemene-zaken"
+                        role="tabpanel"
+                        class="contact-panel mt-8"
+                        data-panel="algemene-zaken"
+                >
+                    <h3 class="text-lg font-bold text-gray-900">
+                        Algemene zaken
+                    </h3>
+
+                    <form class="mt-5 space-y-4">
+                        <div>
+                            <label
+                                    for="algemene-naam"
+                                    class="block text-sm font-medium text-gray-700"
+                            >
+                                Naam
+                            </label>
+
+                            <input
+                                    id="algemene-naam"
+                                    type="text"
+                                    name="naam"
+                                    class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-red-600 focus:outline-none focus:ring-1 focus:ring-red-600"
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                    for="algemene-email"
+                                    class="block text-sm font-medium text-gray-700"
+                            >
+                                E-mailadres
+                            </label>
+
+                            <input
+                                    id="algemene-email"
+                                    type="email"
+                                    name="email"
+                                    class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-red-600 focus:outline-none focus:ring-1 focus:ring-red-600"
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                    for="algemene-onderwerp"
+                                    class="block text-sm font-medium text-gray-700"
+                            >
+                                Onderwerp
+                            </label>
+
+                            <input
+                                    id="algemene-onderwerp"
+                                    type="text"
+                                    name="onderwerp"
+                                    class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-red-600 focus:outline-none focus:ring-1 focus:ring-red-600"
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                    for="algemene-bericht"
+                                    class="block text-sm font-medium text-gray-700"
+                            >
+                                Bericht
+                            </label>
+
+                            <textarea
+                                    id="algemene-bericht"
+                                    name="bericht"
+                                    rows="6"
+                                    class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-red-600 focus:outline-none focus:ring-1 focus:ring-red-600"
+                            ></textarea>
+                        </div>
+
+                        <div class="pt-2">
+                            <button
+                                    type="submit"
+                                    class="rounded-lg bg-red-700 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-800"
+                            >
+                                Verzenden
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Wedstrijdsecretaris -->
+                <div
+                        id="panel-wedstrijdsecretaris"
+                        role="tabpanel"
+                        class="contact-panel mt-8"
+                        data-panel="wedstrijdsecretaris"
+                        hidden
+                >
+                    <h3 class="text-lg font-bold text-gray-900">
+                        Wedstrijdsecretaris
+                    </h3>
+
+                    <form class="mt-5 space-y-4">
+                        <div>
+                            <label
+                                    for="wedstrijd-naam"
+                                    class="block text-sm font-medium text-gray-700"
+                            >
+                                Naam
+                            </label>
+
+                            <input
+                                    id="wedstrijd-naam"
+                                    type="text"
+                                    name="naam"
+                                    class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-red-600 focus:outline-none focus:ring-1 focus:ring-red-600"
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                    for="wedstrijd-email"
+                                    class="block text-sm font-medium text-gray-700"
+                            >
+                                E-mailadres
+                            </label>
+
+                            <input
+                                    id="wedstrijd-email"
+                                    type="email"
+                                    name="email"
+                                    class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-red-600 focus:outline-none focus:ring-1 focus:ring-red-600"
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                    for="wedstrijd-onderwerp"
+                                    class="block text-sm font-medium text-gray-700"
+                            >
+                                Onderwerp
+                            </label>
+
+                            <input
+                                    id="wedstrijd-onderwerp"
+                                    type="text"
+                                    name="onderwerp"
+                                    class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-red-600 focus:outline-none focus:ring-1 focus:ring-red-600"
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                    for="wedstrijd-bericht"
+                                    class="block text-sm font-medium text-gray-700"
+                            >
+                                Bericht
+                            </label>
+
+                            <textarea
+                                    id="wedstrijd-bericht"
+                                    name="bericht"
+                                    rows="6"
+                                    class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-red-600 focus:outline-none focus:ring-1 focus:ring-red-600"
+                            ></textarea>
+                        </div>
+
+                        <div class="pt-2">
+                            <button
+                                    type="submit"
+                                    class="rounded-lg bg-red-700 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-800"
+                            >
+                                Verzenden
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Ledenadministratie -->
+                <div
+                        id="panel-ledenadministratie"
+                        role="tabpanel"
+                        class="contact-panel mt-8"
+                        data-panel="ledenadministratie"
+                        hidden
+                >
+                    <h3 class="text-lg font-bold text-gray-900">
+                        Ledenadministratie
+                    </h3>
+
+                    <form class="mt-5 space-y-4">
+                        <div>
+                            <label
+                                    for="leden-naam"
+                                    class="block text-sm font-medium text-gray-700"
+                            >
+                                Naam
+                            </label>
+
+                            <input
+                                    id="leden-naam"
+                                    type="text"
+                                    name="naam"
+                                    class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-red-600 focus:outline-none focus:ring-1 focus:ring-red-600"
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                    for="leden-email"
+                                    class="block text-sm font-medium text-gray-700"
+                            >
+                                E-mailadres
+                            </label>
+
+                            <input
+                                    id="leden-email"
+                                    type="email"
+                                    name="email"
+                                    class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-red-600 focus:outline-none focus:ring-1 focus:ring-red-600"
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                    for="leden-onderwerp"
+                                    class="block text-sm font-medium text-gray-700"
+                            >
+                                Onderwerp
+                            </label>
+
+                            <input
+                                    id="leden-onderwerp"
+                                    type="text"
+                                    name="onderwerp"
+                                    class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-red-600 focus:outline-none focus:ring-1 focus:ring-red-600"
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                    for="leden-bericht"
+                                    class="block text-sm font-medium text-gray-700"
+                            >
+                                Bericht
+                            </label>
+
+                            <textarea
+                                    id="leden-bericht"
+                                    name="bericht"
+                                    rows="6"
+                                    class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-red-600 focus:outline-none focus:ring-1 focus:ring-red-600"
+                            ></textarea>
+                        </div>
+
+                        <div class="pt-2">
+                            <button
+                                    type="submit"
+                                    class="rounded-lg bg-red-700 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-800"
+                            >
+                                Verzenden
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Jeugd -->
+                <div
+                        id="panel-jeugd"
+                        role="tabpanel"
+                        class="contact-panel mt-8"
+                        data-panel="jeugd"
+                        hidden
+                >
+                    <h3 class="text-lg font-bold text-gray-900">
+                        Jeugd
+                    </h3>
+
+                    <form class="mt-5 space-y-4">
+                        <div>
+                            <label
+                                    for="jeugd-naam"
+                                    class="block text-sm font-medium text-gray-700"
+                            >
+                                Naam
+                            </label>
+
+                            <input
+                                    id="jeugd-naam"
+                                    type="text"
+                                    name="naam"
+                                    class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-red-600 focus:outline-none focus:ring-1 focus:ring-red-600"
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                    for="jeugd-email"
+                                    class="block text-sm font-medium text-gray-700"
+                            >
+                                E-mailadres
+                            </label>
+
+                            <input
+                                    id="jeugd-email"
+                                    type="email"
+                                    name="email"
+                                    class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-red-600 focus:outline-none focus:ring-1 focus:ring-red-600"
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                    for="jeugd-onderwerp"
+                                    class="block text-sm font-medium text-gray-700"
+                            >
+                                Onderwerp
+                            </label>
+
+                            <input
+                                    id="jeugd-onderwerp"
+                                    type="text"
+                                    name="onderwerp"
+                                    class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-red-600 focus:outline-none focus:ring-1 focus:ring-red-600"
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                    for="jeugd-bericht"
+                                    class="block text-sm font-medium text-gray-700"
+                            >
+                                Bericht
+                            </label>
+
+                            <textarea
+                                    id="jeugd-bericht"
+                                    name="bericht"
+                                    rows="6"
+                                    class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-red-600 focus:outline-none focus:ring-1 focus:ring-red-600"
+                            ></textarea>
+                        </div>
+
+                        <div class="pt-2">
+                            <button
+                                    type="submit"
+                                    class="rounded-lg bg-red-700 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-800"
+                            >
+                                Verzenden
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Damesteam -->
+                <div
+                        id="panel-damesteam"
+                        role="tabpanel"
+                        class="contact-panel mt-8"
+                        data-panel="damesteam"
+                        hidden
+                >
+                    <h3 class="text-lg font-bold text-gray-900">
+                        Damesteam
+                    </h3>
+
+                    <form class="mt-5 space-y-4">
+                        <div>
+                            <label
+                                    for="dames-naam"
+                                    class="block text-sm font-medium text-gray-700"
+                            >
+                                Naam
+                            </label>
+
+                            <input
+                                    id="dames-naam"
+                                    type="text"
+                                    name="naam"
+                                    class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-red-600 focus:outline-none focus:ring-1 focus:ring-red-600"
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                    for="dames-email"
+                                    class="block text-sm font-medium text-gray-700"
+                            >
+                                E-mailadres
+                            </label>
+
+                            <input
+                                    id="dames-email"
+                                    type="email"
+                                    name="email"
+                                    class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-red-600 focus:outline-none focus:ring-1 focus:ring-red-600"
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                    for="dames-onderwerp"
+                                    class="block text-sm font-medium text-gray-700"
+                            >
+                                Onderwerp
+                            </label>
+
+                            <input
+                                    id="dames-onderwerp"
+                                    type="text"
+                                    name="onderwerp"
+                                    class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-red-600 focus:outline-none focus:ring-1 focus:ring-red-600"
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                    for="dames-bericht"
+                                    class="block text-sm font-medium text-gray-700"
+                            >
+                                Bericht
+                            </label>
+
+                            <textarea
+                                    id="dames-bericht"
+                                    name="bericht"
+                                    rows="6"
+                                    class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-red-600 focus:outline-none focus:ring-1 focus:ring-red-600"
+                            ></textarea>
+                        </div>
+
+                        <div class="pt-2">
+                            <button
+                                    type="submit"
+                                    class="rounded-lg bg-red-700 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-800"
+                            >
+                                Verzenden
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+</Layout>
+
+<script>
+    const tabs = document.querySelectorAll<HTMLButtonElement>('.contact-tab');
+    const panels = document.querySelectorAll<HTMLElement>('.contact-panel');
+
+    tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+            const selectedTab = tab.dataset.tab;
+
+            tabs.forEach((item) => {
+                const active = item.dataset.tab === selectedTab;
+
+                item.setAttribute('aria-selected', String(active));
+
+                item.classList.toggle('bg-red-700', active);
+                item.classList.toggle('text-white', active);
+
+                item.classList.toggle('bg-gray-100', !active);
+                item.classList.toggle('text-gray-700', !active);
+            });
+
+            panels.forEach((panel) => {
+                panel.hidden = panel.dataset.panel !== selectedTab;
+            });
+        });
+    });
+</script>
