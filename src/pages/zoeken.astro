@@ -1,0 +1,179 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const searchItems = [
+    {
+        title: 'Rood Wit Zaanstad',
+        description: 'Sport- en Jongerenvereniging Rood-Wit Zaanstad in Zaandam.',
+        url: '/',
+    },
+    {
+        title: 'Contact',
+        description: 'Contactgegevens, telefoonnummer en contactformulieren van Rood Wit Zaanstad.',
+        url: '/contact',
+    },
+    {
+        title: 'Bestuur',
+        description: 'Het bestuur van Rood Wit Zaanstad.',
+        url: '/bestuur',
+    },
+    {
+        title: 'Sponsoren',
+        description: 'Onze sponsors – Samen sterk voor Rood-Wit Zaanstad.',
+        url: '/sponsoren',
+    },
+    {
+        title: 'Jeugd',
+        description: 'Informatie over de jeugd van Rood Wit Zaanstad.',
+        url: '/jeugd',
+    },
+    {
+        title: 'Senioren',
+        description: 'Informatie en foto’s van de senioren van Rood Wit Zaanstad.',
+        url: '/senioren',
+    },
+    {
+        title: 'Volleybal',
+        description: 'Volleybal bij Rood Wit Zaanstad.',
+        url: '/volleybal',
+    },
+    {
+        title: 'Lidmaatschap',
+        description: 'Informatie over het lidmaatschap en het aanmeldingsformulier.',
+        url: '/lidmaatschap',
+    },
+    {
+        title: 'Damesteam',
+        description: 'Informatie over het damesteam van Rood Wit Zaanstad.',
+        url: '/damesteam',
+    },
+    {
+        title: 'Meedoen Zaanstad Regeling',
+        description: 'Informatie over de Meedoen Zaanstad regeling.',
+        url: '/meedoen-zaanstad-regeling',
+    },
+];
+---
+
+<Layout title="Zoeken | Rood Wit Zaanstad">
+    <main class="bg-gray-100 px-4 py-6 sm:px-6">
+        <section class="mx-auto max-w-3xl bg-white p-5 shadow-sm">
+
+            <h1 class="text-3xl font-bold text-gray-900">
+                Zoeken
+            </h1>
+
+            <form id="search-form" class="mt-6 flex">
+                <label for="search-input" class="sr-only">
+                    Zoeken
+                </label>
+
+                <input
+                        id="search-input"
+                        type="search"
+                        name="q"
+                        placeholder="Zoeken"
+                        class="min-w-0 flex-1 border border-gray-300 px-4 py-3 text-sm text-gray-900 outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600"
+                />
+
+                <button
+                        type="submit"
+                        class="bg-red-700 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-800"
+                >
+                    Zoeken
+                </button>
+            </form>
+
+            <div id="search-results" class="mt-8"></div>
+
+        </section>
+    </main>
+</Layout>
+
+<script define:vars={{ searchItems }}>
+    const form = document.querySelector('#search-form');
+    const input = document.querySelector('#search-input');
+    const results = document.querySelector('#search-results');
+
+    if (form && input && results) {
+        const params = new URLSearchParams(window.location.search);
+        const initialQuery = params.get('q')?.trim() ?? '';
+
+        input.value = initialQuery;
+
+        const search = (query) => {
+            const normalizedQuery = query.toLowerCase();
+
+            const matches = searchItems.filter((item) =>
+                `${item.title} ${item.description}`
+                    .toLowerCase()
+                    .includes(normalizedQuery)
+            );
+
+            if (!query) {
+                results.innerHTML = `
+                    <p class="text-sm text-gray-600">
+                        Vul hierboven een zoekterm in.
+                    </p>
+                `;
+
+                return;
+            }
+
+            if (matches.length === 0) {
+                results.innerHTML = `
+                    <p class="text-sm text-gray-600">
+                        Geen resultaten gevonden voor
+                        <strong>${query}</strong>.
+                    </p>
+                `;
+
+                return;
+            }
+
+            results.innerHTML = `
+                <p class="mb-5 text-sm text-gray-600">
+                    ${matches.length} resultaat${matches.length === 1 ? '' : 'en'}
+                    gevonden voor <strong>${query}</strong>.
+                </p>
+
+                <div class="space-y-4">
+                    ${matches.map((item) => `
+                        <a
+                            href="${item.url}"
+                            class="block border border-gray-200 p-4 transition-colors hover:border-red-600 hover:bg-gray-50"
+                        >
+                            <h2 class="font-bold text-gray-900">
+                                ${item.title}
+                            </h2>
+
+                            <p class="mt-1 text-sm leading-6 text-gray-600">
+                                ${item.description}
+                            </p>
+                        </a>
+                    `).join('')}
+                </div>
+            `;
+        };
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const query = input.value.trim();
+
+            const url = new URL(window.location.href);
+
+            if (query) {
+                url.searchParams.set('q', query);
+            } else {
+                url.searchParams.delete('q');
+            }
+
+            window.history.replaceState({}, '', url);
+
+            search(query);
+        });
+
+        search(initialQuery);
+    }
+</script>
