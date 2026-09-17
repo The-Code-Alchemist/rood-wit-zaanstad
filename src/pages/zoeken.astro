@@ -55,89 +55,44 @@ const searchItems = [
 ];
 ---
 
-<Layout title="Zoeken | Rood Wit Zaanstad">
+<Layout title="Zoekresultaten | Rood Wit Zaanstad">
     <main class="bg-gray-100 px-4 py-6 sm:px-6">
         <section class="mx-auto max-w-3xl bg-white p-5 shadow-sm">
 
             <h1 class="text-3xl font-bold text-gray-900">
-                Zoeken
+                Zoekresultaten
             </h1>
 
-            <form id="search-form" class="mt-6 flex">
-                <label for="search-input" class="sr-only">
-                    Zoeken
-                </label>
-
-                <input
-                        id="search-input"
-                        type="search"
-                        name="q"
-                        placeholder="Zoeken"
-                        class="min-w-0 flex-1 border border-gray-300 px-4 py-3 text-sm text-gray-900 outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600"
-                />
-
-                <button
-                        type="submit"
-                        class="bg-red-700 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-800"
-                >
-                    Zoeken
-                </button>
-            </form>
-
-            <div id="search-results" class="mt-8"></div>
+            <div id="search-results" class="mt-6"></div>
 
         </section>
     </main>
 </Layout>
 
 <script define:vars={{ searchItems }}>
-    const form = document.querySelector('#search-form');
-    const input = document.querySelector('#search-input');
     const results = document.querySelector('#search-results');
 
-    if (form && input && results) {
+    if (results) {
         const params = new URLSearchParams(window.location.search);
-        const initialQuery = params.get('q')?.trim() ?? '';
+        const query = params.get('q')?.trim() ?? '';
 
-        input.value = initialQuery;
+        const normalizedQuery = query.toLowerCase();
 
-        const search = (query) => {
-            const normalizedQuery = query.toLowerCase();
-
-            const matches = searchItems.filter((item) =>
+        const matches = normalizedQuery
+            ? searchItems.filter((item) =>
                 `${item.title} ${item.description}`
                     .toLowerCase()
                     .includes(normalizedQuery)
-            );
+            )
+            : searchItems;
 
-            if (!query) {
-                results.innerHTML = `
-                    <p class="text-sm text-gray-600">
-                        Vul hierboven een zoekterm in.
-                    </p>
-                `;
-
-                return;
-            }
-
-            if (matches.length === 0) {
-                results.innerHTML = `
-                    <p class="text-sm text-gray-600">
-                        Geen resultaten gevonden voor
-                        <strong>${query}</strong>.
-                    </p>
-                `;
-
-                return;
-            }
-
+        if (!query) {
             results.innerHTML = `
-                <p class="mb-5 text-sm text-gray-600">
-                    ${matches.length} resultaat${matches.length === 1 ? '' : 'en'}
-                    gevonden voor <strong>${query}</strong>.
+                <p class="text-sm leading-6 text-gray-600">
+                    Op deze website vind je de volgende pagina's:
                 </p>
 
-                <div class="space-y-4">
+                <div class="mt-5 space-y-3">
                     ${matches.map((item) => `
                         <a
                             href="${item.url}"
@@ -154,26 +109,38 @@ const searchItems = [
                     `).join('')}
                 </div>
             `;
-        };
+        } else if (matches.length === 0) {
+            results.innerHTML = `
+                <p class="text-sm text-gray-600">
+                    Geen resultaten gevonden voor
+                    <strong class="mx-1">${query}</strong>.
+                </p>
+            `;
+        } else {
+            results.innerHTML = `
+                <p class="text-sm text-gray-600">
+                    ${matches.length} resultaat${matches.length === 1 ? '' : 'en'}
+                    gevonden voor
+                    <strong class="mx-1">${query}</strong>.
+                </p>
 
-        form.addEventListener('submit', (event) => {
-            event.preventDefault();
+                <div class="mt-5 space-y-4">
+                    ${matches.map((item) => `
+                        <a
+                            href="${item.url}"
+                            class="block border border-gray-200 p-4 transition-colors hover:border-red-600 hover:bg-gray-50"
+                        >
+                            <h2 class="font-bold text-gray-900">
+                                ${item.title}
+                            </h2>
 
-            const query = input.value.trim();
-
-            const url = new URL(window.location.href);
-
-            if (query) {
-                url.searchParams.set('q', query);
-            } else {
-                url.searchParams.delete('q');
-            }
-
-            window.history.replaceState({}, '', url);
-
-            search(query);
-        });
-
-        search(initialQuery);
+                            <p class="mt-1 text-sm leading-6 text-gray-600">
+                                ${item.description}
+                            </p>
+                        </a>
+                    `).join('')}
+                </div>
+            `;
+        }
     }
 </script>
